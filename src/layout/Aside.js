@@ -6,7 +6,7 @@ export default function Aside(){
     console.log(asideProp)
     return(
         <div className={`aside aside--${asideProp ? "open" : "close"}`}>
-            <div onClick={asideOff}>aside Close</div>
+            <div className="aside--closeBtn" onClick={asideOff}>닫기</div>
             
         </div>
     )

@@ -1,12 +1,17 @@
 import { useState } from "react";
 export default function Header(){
-    let [whatTime, setWhatTime] = useState()
+    var time = new Date();
+    var hour = time.getHours();
+    var minutes = time.getMinutes();
+    var seconds = time.getSeconds();
+    var t = hour +":" + minutes;
+    let [whatTime, setWhatTime] = useState(t)
     const getTime = () => {
-        const time = new Date();
-        const hour = time.getHours();
-        const minutes = time.getMinutes();
-        const seconds = time.getSeconds();
-        let t = hour +":" + minutes + ":"+seconds;
+        time = new Date();
+        hour = time.getHours();
+        minutes = time.getMinutes();
+        seconds = time.getSeconds();
+        t = hour +":" + minutes;
         setWhatTime(t)
     }
     setInterval(getTime, 1000)
