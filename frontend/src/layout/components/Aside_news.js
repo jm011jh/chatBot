@@ -6,8 +6,6 @@ export default function AsideNews(props){
     let [thisNews, setThisNews] = useState('')
     useEffect(()=>{
         getNoticeNews.then( res => {
-            console.log(res)
-            console.log(props.id)
             let a = res.filter(x => x.id == props.id)
             setThisNews(a[0])
         })

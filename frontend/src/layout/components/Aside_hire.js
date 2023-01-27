@@ -8,8 +8,6 @@ export default function AsideHire(props){
     let [thisLocation, setThisLocation] = useState()
     useEffect(()=>{
         getNoticeHire.then( res => {
-            console.log(res)
-            console.log(props.id)
             let a = res.filter(x => x.id == props.id)
             setThisHire(a[0])
         })

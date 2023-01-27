@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,900&display=swap");
+@font-face {
+  font-family: 'AppleSD';
+  src: url("./AppleSDGothicNeoH00.woff");
+  src:url("./AppleSDGothicNeoH00.otf") format("opentype"), url("./AppleSDGothicNeoH00.woff") format("woff"), url("./AppleSDGothicNeoH00.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppleSD';
+  src: url("./AppleSDGothicNeoEB00.woff");
+  src: url("./AppleSDGothicNeoEB00.otf") format("opentype"), url("./AppleSDGothicNeoEB00.woff") format("woff"), url("./AppleSDGothicNeoEB00.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppleSD';
+  src: url("./AppleSDGothicNeoB00.woff");
+  src: url("./AppleSDGothicNeoB00.otf") format("opentype"), url("./AppleSDGothicNeoB00.woff") format("woff"), url("./AppleSDGothicNeoB00.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppleSD';
+  src: url("./AppleSDGothicNeoSB00.woff");
+  src: url("./AppleSDGothicNeoSB00.otf") format("opentype"), url("./AppleSDGothicNeoSB00.woff") format("woff"), url("./AppleSDGothicNeoSB00.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppleSD';
+  src: url("./AppleSDGothicNeoM00.woff");
+  src: url("./AppleSDGothicNeoM00.otf") format("opentype"), url("./AppleSDGothicNeoM00.woff") format("woff"), url("./AppleSDGothicNeoR00.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppleSD';
+  src: url("./AppleSDGothicNeoR00.woff");
+  src: url("./AppleSDGothicNeoR00.otf") format("opentype"), url("./AppleSDGothicNeoR00.woff") format("woff"), url("./AppleSDGothicNeoR00.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+
+@font-face {
+  font-family: 'AppleSD';
+  src: url("./AppleSDGothicNeoL00.woff");
+  src: url("./AppleSDGothicNeoL00.otf") format("opentype"), url("./AppleSDGothicNeoL00.woff") format("woff"), url("./AppleSDGothicNeoL00.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppleSD';
+  src: url("./AppleSDGothicNeoUL00.woff");
+  src: url("./AppleSDGothicNeoUL00.otf") format("opentype"), url("./AppleSDGothicNeoUL00.woff") format("woff"), url("./AppleSDGothicNeoUL00.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppleSD';
+  src: url("./AppleSDGothicNeoT00.woff");
+  src: url("./AppleSDGothicNeoT00.otf") format("opentype"), url("./AppleSDGothicNeoT00.woff") format("woff"), url("./AppleSDGothicNeoT00.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+/* @@@@@@@@ */
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 900;
+  font-display: swap;
+  src: local("Pretendard Black"), url("./Pretendard-Black.woff2") format("woff2"), url("./Pretendard-Black.woff") format("woff"), url("./Pretendard-Black.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 800;
+  font-display: swap;
+  src: local("Pretendard ExtraBold"), url("./Pretendard-ExtraBold.woff2") format("woff2"), url("./Pretendard-ExtraBold.woff") format("woff"), url("./Pretendard-ExtraBold.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"), url("./Pretendard-Bold.woff2") format("woff2"), url("./Pretendard-Bold.woff") format("woff"), url("./Pretendard-Bold.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-display: swap;
+  src: local("Pretendard SemiBold"), url("./Pretendard-SemiBold.woff2") format("woff2"), url("./Pretendard-SemiBold.woff") format("woff"), url("./Pretendard-SemiBold.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"), url("./Pretendard-Medium.woff2") format("woff2"), url("./Pretendard-Medium.woff") format("woff"), url("./Pretendard-Medium.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"), url("./Pretendard-Regular.woff2") format("woff2"), url("./Pretendard-Regular.woff") format("woff"), url("./Pretendard-Regular.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-display: swap;
+  src: local("Pretendard Light"), url("./Pretendard-Light.woff2") format("woff2"), url("./Pretendard-Light.woff") format("woff"), url("./Pretendard-Light.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 200;
+  font-display: swap;
+  src: local("Pretendard ExtraLight"), url("./Pretendard-ExtraLight.woff2") format("woff2"), url("./Pretendard-ExtraLight.woff") format("woff"), url("./Pretendard-ExtraLight.otf") format("otf");
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 100;
+  font-display: swap;
+  src: local("Pretendard Thin"), url("./Pretendard-Thin.woff2") format("woff2"), url("./Pretendard-Thin.woff") format("woff"), url("./Pretendard-Thin.otf") format("otf");
+}
