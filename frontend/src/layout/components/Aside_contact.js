@@ -13,8 +13,8 @@ export default function AsideContact(props){
                     <div className="aside--contact-head-bgImg"></div>
                 </div>
                 <div className="aside--contact-head-text">
-                    <div className="aside--contact-head-text01">PROJECT REQUEST</div>
-                    <div className="aside--contact-head-text02">NEED US? TEXT US!</div>
+                    <div className="aside--contact-head-text01">프로젝트를 문의하세요</div>
+                    <div className="aside--contact-head-text02">TEXT US!</div>
                     <div className="aside--contact-head-text03">send us your project request, we will be in touch soon</div>
                 </div>
             </div>

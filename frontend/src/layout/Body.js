@@ -4,7 +4,7 @@ import News01 from "./components/News01"
 import useStore from "../store"
 import { useEffect, useState } from "react"
 export default function Body(){
-    const {link01Data,hire01Data,news01Data,getNoticeHire,getNoticeNews} = useStore(state => state)
+    const {link01Data,hire01Data,getNoticeHire,getNoticeNews} = useStore(state => state)
     let [noticeHire, setNoticeHire] = useState([])
     let [noticeNews, setNoticeNews] = useState([])
     useEffect(() => {

@@ -20,7 +20,7 @@ export default function Hire01(props){
         })
     },[])
     return(
-        <div className="bd--hire01" onClick={e => asideOpen()}>
+        <div className="bd--hire01" onClick={asideOpen}>
             <div className="bd--hire01-text01">{thisPosition}</div>
             <div className="bd--hire01-text01">{thisLocation}</div>
             <div className="bd--hire01-text02">{props.item.cathegory}</div>

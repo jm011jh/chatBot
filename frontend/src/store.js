@@ -6,7 +6,7 @@ const useStore = create((set) => ({
     asideOff : ()=> set(({asideProp: false})),
     asideType : "",
     setAsideType : (type) => set((state)=> ({asideType : type})),
-    noticeNumber : Number(0),
+    noticeNumber : 0,
     setNoticeNumber : (num) => set((state) => ({noticeNumber : num})),
     link01Data : [
         {
@@ -22,43 +22,6 @@ const useStore = create((set) => ({
             asideType: "recruit",
         },
     ],
-    news01Data: [
-        {
-            icon:"",
-            name:"jerry",
-            time:"16:45",
-            position:"Seoul.HongDae",
-            desc:"운동...좋아하세요...?",
-            img:""
-        },
-        {
-            icon:"",
-            name:"rossy",
-            time:"18:45",
-            position:"Seoul.HongDae",
-            desc:"야근은 정말 싫습니다.",
-            img:""
-        },
-        {
-            icon:"",
-            name:"G.S.S",
-            time:"12:45",
-            position:"Seoul.HongDae",
-            desc:"제가 또 풍이나 암 그 쪽 전문가로써 말씀드리자면...",
-            img:""
-        },
-        {
-            icon:"",
-            name:"jerry",
-            time:"16:45",
-            position:"Seoul.HongDae",
-            desc:"좋은 소식을 알려드리겠습니다.",
-            img:""
-        },
-    ],
-    getNews : axios.get("/api/test").then(res => {
-        return res.data
-    }),
     getNoticeHireCount : axios.get("/api/get/count/notice/hire").then(res => {
         return res.data
     }),
