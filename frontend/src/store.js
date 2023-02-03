@@ -13,29 +13,19 @@ const useStore = create((set) => ({
     projectBudget : ["~1천만원","1천만원~5천만원","5천만원~1억원","1억원~"],
     link01Data : [
         {
-            text01:"우리에게 연락해",
-            text02:"지금당장",
-            text03:"저나저나",
+            text01:"Need a help?",
+            text02:"슬래쉬에 문의하세요.",
+            text03:"프로젝트에 대한 간단한 정보를 보내주시면 담당자가 빠른 시일 내로 연락드립니다.",
             asideType: "contact",
         },
         {
-            text01:"우리에게 지원해",
-            text02:"지금당장",
-            text03:"커몬커몬",
+            text01:"Join to slash!",
+            text02:"슬래쉬와 함께하세요.",
+            text03:"슬래쉬는 상시채용중입니다. 현재 진행중인 채용건이 없더라도 미리 등록을 해주시면 우선적으로 검토를 진행하고 있습니다.",
             asideType: "recruit",
         },
     ],
-    
-    getRecruitRequestCount : axios.get("/api/get/count/request/recruit").then(res => {
-        return res.data
-    }),
-    getProjectRequestCount : axios.get("/api/get/count/request/project").then(res => {
-        return res.data
-    }),
-    getNoticeNewsCount : axios.get("/api/get/count/notice/news").then(res => {
-        return res.data
-    }),
-    getNoticeHireCount : axios.get("/api/get/count/notice/hire").then(res => {
+    getCount : (type) => axios.get(`/api/get/count/${type}`).then(res => { // recruit_request, project_request, notice_news, notice_hire
         return res.data
     }),
     getHirePosition : axios.get("/api/get/info/hire/position").then(res => {

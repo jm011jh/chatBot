@@ -10,8 +10,12 @@ const RecruitType = require("./models/recruit_type.js")
 const ProjectRequest = require("./models/project_request.js")
 const RecruitRequest = require("./models/recruit_request.js")
 const router = express.Router()
-router.get("/test", (req,res) => {
-    res.send("test here")
+router.get("/get/count/:id", (req, res) => {
+    let thisId = req.params.id
+    Count.findOne({count_name: thisId}, (error, result) => {
+        if(error) console.log(error)
+        res.send(result)
+    })
 })
 router.get("/get/info/contact/type", (req, res) => {
     ProjectType.find((error, result) => {
@@ -45,30 +49,6 @@ router.get("/get/notice/hire", (req, res) => {
 })
 router.get("/get/notice/news", (req, res) => {
     NoticeNews.find((error, result) => {
-        if(error) console.log(error)
-        res.send(result)
-    })
-})
-router.get("/get/count/notice/hire",(req,res) => {
-    Count.findOne({count_name: "notice_hire"},(error, result) => {
-        if(error) console.log(error)
-        res.send(result)
-    })
-})
-router.get("/get/count/notice/news",(req,res) => {
-    Count.findOne({count_name: "notice_news"},(error, result) => {
-        if(error) console.log(error)
-        res.send(result)
-    })
-})
-router.get("/get/count/request/project",(req,res) => {
-    Count.findOne({count_name: "project_request"},(error, result) => {
-        if(error) console.log(error)
-        res.send(result)
-    })
-})
-router.get("/get/count/request/recruit",(req,res) => {
-    Count.findOne({count_name: "recruit_request"},(error, result) => {
         if(error) console.log(error)
         res.send(result)
     })

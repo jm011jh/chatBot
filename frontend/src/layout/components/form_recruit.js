@@ -1,11 +1,12 @@
 import useStore  from "../../store"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
+import ArrCircle from "../design/ArrCircle"
 
 export default function FormRecruit(){
     const {
         getRecruitType
-        ,getRecruitRequestCount
+        ,getCount
     } = useStore(state => state)
     const [projectTypes, setProjectTypes] = useState([])
     const [inputs, setInputs] = useState({
@@ -23,6 +24,7 @@ export default function FormRecruit(){
         setInputs(nextInputs)
     }
     const choiceValueHandler = (e, type) => {
+        console.log(e)
         var val, nextInputs
         val = e.target.getAttribute("data-number")
         nextInputs = {...inputs, rc_type : Number(val)}
@@ -32,7 +34,7 @@ export default function FormRecruit(){
         axios.post("/api/post/request/recruit",inputs).then((res) => console.log(res))
     }
     useEffect(()=>{
-        getRecruitRequestCount.then(res => {
+        getCount('recruit_request').then(res => {
             const nextInputs = {
                 ...inputs,
                 id : res.count_num
@@ -43,6 +45,17 @@ export default function FormRecruit(){
             setProjectTypes(res)
         })
     },[])
+    useEffect(()=>{
+        const asideChoiceItems = document.querySelectorAll(".aside--form-choice-item")
+        asideChoiceItems.forEach(function(el){
+            el.addEventListener("click",function(){
+                for(let item of asideChoiceItems){
+                    item.classList.remove("selected")
+                }
+                el.classList.add("selected")
+            })
+        })
+    },[projectTypes])
     return(
         <div className="aside--form">
             <div className="aside--form-choice">
@@ -58,24 +71,24 @@ export default function FormRecruit(){
                 </div>
             </div>
             <div className="aside--form-typing">
-                <div className="aside--form-typing-item">
-                    <label htmlFor="user_name">이름</label>
+                <div className="aside--form-typing-item require">
+                    <label htmlFor="user_name"><p>이름</p></label>
                     <input type="text" id="user_name" name="user_name" onChange={textValueHandler}></input>
                 </div>
                 <div className="aside--form-typing-item">
-                    <label htmlFor="user_email">이메일</label>
+                    <label htmlFor="user_email"><p>이메일</p></label>
                     <input type="text" id="user_email" name="user_email" onChange={textValueHandler}></input>
                 </div>
-                <div className="aside--form-typing-item">
-                    <label htmlFor="user_phone">연락처</label>
+                <div className="aside--form-typing-item require">
+                    <label htmlFor="user_phone"><p>연락처</p></label>
                     <input type="text" id="user_phone" name="user_phone" onChange={textValueHandler}></input>
                 </div>
                 <div className="aside--form-typing-item">
-                    <label htmlFor="user_url">URL (포트폴리오, 웹사이트)</label>
+                    <label htmlFor="user_url"><p>URL (포트폴리오, 웹사이트)</p></label>
                     <input type="text" id="user_url" name="user_url" onChange={textValueHandler}></input>
                 </div>
                 <div className="aside--form-typing-item">
-                    <label htmlFor="user_pr">자기소개</label>
+                    <label htmlFor="user_pr"><p>자기소개</p></label>
                     <textarea id="user_pr" name="user_pr" onChange={textValueHandler}></textarea>
                 </div>
             </div>

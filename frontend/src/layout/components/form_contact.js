@@ -1,15 +1,14 @@
 import useStore  from "../../store"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 
 export default function FormContact(){
     const {
         getProjectType
-        ,getHireLocation
         ,projectType02
         ,projectPeriod
         ,projectBudget
-        ,getProjectRequestCount
+        ,getCount
     } = useStore(state => state)
     const [projectTypes, setProjectTypes] = useState([])
     const [inputs, setInputs] = useState({
@@ -33,16 +32,16 @@ export default function FormContact(){
     }
     const choiceValueHandler = (e, type) => {
         var val, nextInputs
-        if(type == 1){
+        if(type === 1){
             val = e.target.getAttribute("data-number")
             nextInputs = {...inputs, pj_type01 : Number(val)}
-        } else if(type == 2){
+        } else if(type === 2){
             val = e.target.innerHTML
             nextInputs = {...inputs, pj_type02 : val}
-        } else if(type == 3){
+        } else if(type === 3){
             val = e.target.innerHTML
             nextInputs = {...inputs, pj_budget : val}
-        } else if(type == 4){
+        } else if(type === 4){
             val = e.target.innerHTML
             nextInputs = {...inputs, pj_period : val}
         }
@@ -52,7 +51,7 @@ export default function FormContact(){
         axios.post("/api/post/request/project",inputs).then((res) => console.log(res))
     }
     useEffect(()=>{
-        getProjectRequestCount.then(res => {
+        getCount('project_request').then(res => {
             console.log(res.count_num)
             const nextInputs = {
                 ...inputs,
@@ -115,32 +114,32 @@ export default function FormContact(){
                 </div>
             </div>
             <div className="aside--form-typing">
-                <div className="aside--form-typing-item">
-                    <label htmlFor="user_name">이름</label>
+                <div className="aside--form-typing-item require">
+                    <label htmlFor="user_name"><p>이름</p></label>
                     <input type="text" id="user_name" name="user_name" onChange={textValueHandler}></input>
                 </div>
                 <div className="aside--form-typing-item">
-                    <label htmlFor="user_job">직책</label>
+                    <label htmlFor="user_job"><p>직책</p></label>
                     <input type="text" id="user_job" name="user_job" onChange={textValueHandler}></input>
                 </div>
-                <div className="aside--form-typing-item">
-                    <label htmlFor="company_name">기관명 혹은 기업명</label>
+                <div className="aside--form-typing-item require">
+                    <label htmlFor="company_name"><p>기관명 혹은 기업명</p></label>
                     <input type="text" id="company_name" name="company_name" onChange={textValueHandler}></input>
                 </div>
-                <div className="aside--form-typing-item">
-                    <label htmlFor="company_email">이메일</label>
+                <div className="aside--form-typing-item require">
+                    <label htmlFor="company_email"><p>이메일</p></label>
                     <input type="text" id="company_email" name="company_email" onChange={textValueHandler}></input>
                 </div>
-                <div className="aside--form-typing-item">
-                    <label htmlFor="company_phone">연락처</label>
+                <div className="aside--form-typing-item require">
+                    <label htmlFor="company_phone"><p>연락처</p></label>
                     <input type="text" id="company_phone" name="company_phone" onChange={textValueHandler}></input>
                 </div>
                 <div className="aside--form-typing-item">
-                    <label htmlFor="company_url">URL 브랜드 혹은 프로젝트 사이트</label>
+                    <label htmlFor="company_url"><p>URL 브랜드 혹은 프로젝트 사이트</p></label>
                     <input type="text" id="company_url" name="company_url" onChange={textValueHandler}></input>
                 </div>
                 <div className="aside--form-typing-item">
-                    <label htmlFor="pj_desc">프로젝트 설명</label>
+                    <label htmlFor="pj_desc"><p>프로젝트 설명</p></label>
                     <textarea id="pj_desc" name="pj_desc" onChange={textValueHandler}></textarea>
                 </div>
             </div>

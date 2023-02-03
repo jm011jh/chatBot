@@ -18,7 +18,7 @@ export default function Body(){
     return(
         <div className="bd">
             <div className="bd--links bd--cont">
-                <div className="bd--sub-tit">각종 링크들</div>
+                <div className="bd--sub-tit">Notice</div>
                 {link01Data.map(function(item,idx){
                     return(<Link01 key={idx} item={item}></Link01>)
                 })}

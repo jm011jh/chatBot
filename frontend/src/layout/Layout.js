@@ -3,7 +3,7 @@ import Body from "./Body"
 import './style.css'
 export default function Layout(){
     return(
-        <div>
+        <div className="layout">
             <Header/>
             <Body/>
         </div>
