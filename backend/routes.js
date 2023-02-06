@@ -81,6 +81,15 @@ router.post("/post/notice/news", async (req, res) => {
         })
     })
 })
+router.post("/post/notice/news/like/:type", async (req, _res) => {
+    NoticeNews.findOne({id: req.body.id}, (err, res) => {
+        setOne = req.params.type === "plus" ? res.like + 1 : res.like - 1
+        if (err) console.log(err)
+        NoticeNews.updateOne({id: req.body.id}, {like: setOne}, (error) => {
+            if (error) console.log(error)
+        })
+    })
+})
 router.post("/post/request/project", async (req, res) => {
     var new_projectRequest = new ProjectRequest(req.body)
     new_projectRequest.save((err) => {

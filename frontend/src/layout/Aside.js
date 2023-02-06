@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import useStore from "../store"
 import axios from "axios"
 import AsideNews from "./components/Aside_news"
@@ -7,14 +7,18 @@ import AsideRecruit from "./components/Aside_recruit"
 import AsideForms from "./components/Aside_forms"
 import AsideHire from "./components/Aside_hire"
 export default function Aside(){
+    const aside = useRef()
     const {
         asideType,
         asideProp,
         asideOff,
         noticeNumber,
     } = useStore(state => state)
+    useEffect(()=>{
+        aside.current.scrollTo(0,0)
+    },[asideProp])
     return(
-        <div className={`aside aside--${asideProp ? "open" : "close"}`}>
+        <div ref={aside} className={`aside aside--${asideProp ? "open" : "close"}`}>
             <div className="aside--closeBtn-wrap">
                 <div className="aside--closeBtn" onClick={asideOff}><span></span></div>
             </div>

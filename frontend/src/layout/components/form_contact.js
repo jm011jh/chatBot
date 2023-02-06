@@ -1,8 +1,9 @@
 import useStore  from "../../store"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import axios from "axios"
 
 export default function FormContact(){
+    var agree = false;
     const {
         getProjectType
         ,projectType02
@@ -50,9 +51,18 @@ export default function FormContact(){
     const submitProjectRequest = () => {
         axios.post("/api/post/request/project",inputs).then((res) => console.log(res))
     }
+    const agreeCheck = useRef()
     useEffect(()=>{
+        agreeCheck.current.addEventListener('click',e => {
+            if(agree === false){
+                agree = true
+                agreeCheck.current.classList.add("checked")
+            }else{
+                agree = false
+                agreeCheck.current.classList.remove("checked")
+            }
+        })
         getCount('project_request').then(res => {
-            console.log(res.count_num)
             const nextInputs = {
                 ...inputs,
                 id : res.count_num
@@ -63,6 +73,20 @@ export default function FormContact(){
             setProjectTypes(res)
         })
     },[])
+    useEffect(()=>{
+        const asideChoice = document.querySelectorAll(".aside--form-choice")
+        asideChoice.forEach(function(el){
+            const asideChoiceItems = el.querySelectorAll(".aside--form-choice-item")
+            asideChoiceItems.forEach(function(el_2){
+                el_2.addEventListener("click",function(){
+                    for(let item of asideChoiceItems){
+                        item.classList.remove("selected")
+                    }
+                    el_2.classList.add("selected")
+                })
+            })
+        })
+    },[projectTypes])
     return(
         <div className="aside--form">
             <div className="aside--form-choice">
@@ -143,10 +167,11 @@ export default function FormContact(){
                     <textarea id="pj_desc" name="pj_desc" onChange={textValueHandler}></textarea>
                 </div>
             </div>
-            <div className="aside--form-agreement">
-                <input type="checkbox"></input>
-                <div className="aside--form-check"><span></span></div>
-                <div className="aside--form-agreement-text">동의합니다.</div>
+            <div className="aside--form-agreement-wrap">
+                <div className="aside--form-agreement" ref={agreeCheck}>
+                    <div className="aside--form-check"><span></span></div>
+                    <div className="aside--form-agreement-text">동의합니다.</div>
+                </div>
             </div>
             <div className="aside--form-submit" onClick={submitProjectRequest}>
             {/* <div className="aside--form-submit"> */}

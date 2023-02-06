@@ -7,6 +7,7 @@ export default function AsideNews(props){
     useEffect(()=>{
         getNoticeNews.then( res => {
             let a = res.filter(x => x.id == props.id)
+            console.log(a)
             setThisNews(a[0])
         })
     },[props.id])

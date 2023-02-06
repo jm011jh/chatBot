@@ -21,14 +21,19 @@ export default function Hire01(props){
     },[])
     return(
         <div className="bd--hire01" onClick={asideOpen}>
-            <div className="bd--hire01-text01">{thisPosition}</div>
-            <div className="bd--hire01-text01">{thisLocation}</div>
-            <div className="bd--hire01-text02">{props.item.cathegory}</div>
-            <div className="bd--hire01-text03">{props.item.desc}</div>
-            <div className="bd--hire01-text03">{props.item.link01}</div>
-            <div className="bd--hire01-text03">{
-                props.item.is_hire ? <p>채용중</p> : <p>채용마감</p>
-            }</div>
+            <div className="bd--hire01-bg">
+                <div className="bd--hire01-bgImg"></div>
+            </div>
+            <div className="bd--hire01-text">
+                <div className="bd--hire01-text01">{thisPosition}</div>
+                <div className="bd--hire01-text02">{thisLocation}</div>
+                <div className="bd--hire01-text03">{props.item.cathegory}</div>
+                <div className="bd--hire01-text04">{props.item.desc}</div>
+                {/* <div className="bd--hire01-text05">{props.item.link_01}</div> */}
+                <div className="bd--hire01-text05">{
+                    props.item.is_hire ? <p className="bd--hire01-text05-on">채용중</p> : <p className="bd--hire01-text05-off">채용마감</p>
+                }</div>
+            </div>
         </div>
     )
 }

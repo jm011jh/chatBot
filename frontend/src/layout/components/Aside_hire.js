@@ -22,11 +22,11 @@ export default function AsideHire(props){
     },[props.id])
     return(
         <div className="aside--news">
-            <div className="aside--news-date">종류 : {thisHire.cathegory}</div>
-            <div className="aside--news-desc">설명 : {thisHire.desc}</div>
-            <div className="aside--news-name">링크 : {thisHire.link01}</div>
-            <div className="aside--news-name">직군 : {thisPosition}</div>
-            <div className="aside--news-name">위치 : {thisLocation}</div>
+            <div className="aside--news-position">{thisPosition}</div>
+            <div className="aside--news-info"><p>유형</p><p>{thisHire.cathegory}</p></div>
+            <div className="aside--news-info"><p>지역</p><p>{thisLocation}</p></div>
+            <div className="aside--news-desc">{thisHire.desc}</div>
+            <a className="aside--news-link" href={thisHire.link_01} target="blank">지원하기<span></span></a>
             <div className="aside--news-bg">
                 {/* <div className="aside--news-bgImg" style={{backgroundImage: `url(${thisHire.img})`}}></div> */}
             </div>
