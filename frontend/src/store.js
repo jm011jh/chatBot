@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {create} from 'zustand'
+const adress = "https://slash-377101.du.r.appspot.com"
 const useStore = create((set) => ({
     asideProp : false,
     asideOn : ()=> set(({asideProp: true})),
@@ -25,25 +26,25 @@ const useStore = create((set) => ({
             asideType: "recruit",
         },
     ],
-    getCount : (type) => axios.get(`/api/get/count/${type}`).then(res => { // recruit_request, project_request, notice_news, notice_hire
+    getCount : (type) => axios.get(`${adress}/api/get/count/${type}`).then(res => { // recruit_request, project_request, notice_news, notice_hire
         return res.data
     }),
-    getHirePosition : axios.get("/api/get/info/hire/position").then(res => {
+    getHirePosition : axios.get(adress + "/api/get/info/hire/position").then(res => {
         return res.data
     }),
-    getHireLocation : axios.get("/api/get/info/hire/location").then(res => {
+    getHireLocation : axios.get(adress + "/api/get/info/hire/location").then(res => {
         return res.data
     }),
-    getNoticeHire : axios.get("/api/get/notice/hire").then( res => {
+    getNoticeHire : axios.get(adress + "/api/get/notice/hire").then( res => {
         return res.data
     }),
-    getNoticeNews : axios.get("/api/get/notice/news").then( res => {
+    getNoticeNews : axios.get(adress + "/api/get/notice/news").then( res => {
         return res.data
     }),
-    getProjectType : axios.get("/api/get/info/contact/type").then(res => {
+    getProjectType : axios.get(adress + "/api/get/info/contact/type").then(res => {
         return res.data
     }),
-    getRecruitType : axios.get("/api/get/info/recruit/type").then(res => {
+    getRecruitType : axios.get(adress + "/api/get/info/recruit/type").then(res => {
         return res.data
     }),
 }))

@@ -43,11 +43,12 @@ export default function News01(props){
                 <div className="bd--news01-date"><p>{props.item.date}</p></div>
                 <div className="bd--news01-like"></div>
             </div>
-            {
+            <div onClick={e => test()}>{isLike ? "like "+ (props.item.like) : "liked "+ (props.item.like + 1)}</div>
+            {/* {
                 isLike
                 ? <div onClick={e => {test()}}>like&nbsp;{props.item.like}</div>
                 : <div onClick={e => {test()}}>liked!&nbsp;{props.item.like + 1}</div>
-            }
+            } */}
         </div>
     )
 }
